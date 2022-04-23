@@ -1,0 +1,80 @@
+﻿
+Окончание игрового процесса
+===========================
+
+Если подбит последний монстр, то в DetectBulletCollisions() [State: WaitingForTheLastBomb]
+Если подбит человечек, то в DetectBombCollistions() [State: ManIsHit]
+
+(State = WaitingForTheLastBomb)
+Подбит последний монстр:
+	- ждем падения последней бомбы (человечек двигается) 
+	- после падения последней бомбы: 
+		[State: NextLevelScreen_ManIsAlive]
+
+(State = ManIsHit)
+Если человечек подбит, то:
+	- отключаем возможность атаковать у всех монстров
+	- отключаем возможность двигаться у человечка
+	- прячем все бомбы
+	[State: ManIsDying]
+
+(State: ManIsDying)
+Мультик рассыпания:
+	- запускаем мультик рассыпания человечка
+	- после окончания мультика:
+		[State: NextLevelScreen_ManIsDead]
+
+Экран заставка следующего уровня
+================================
+
+Отключаем возможность двигаться и атаковать у всех в StartLevel() вызывая DisableMonsters()
+
+(State = NextLevelScreen_ManIsAlive)
+Если человечек живой:
+	- разрешаем двигаться человечку
+	- LevelFinished()
+	[State: NextLevelScreen]
+
+(State = NextLevelScreen_ManIsDead)
+Если человечек был не живой:
+		- ожидаем нажания Enter
+		- CurrentLevel--
+		- LevelFinished()
+		[State: NextLevelScreen_Resurrection]
+
+(State: NextLevelScreen_Resurrection)
+Мультик воскрешения:
+	- по окончании мультика:
+		[State: NextLevelScreen]
+
+(State = NextLevelScreen)
+Заставка начала уровня:
+	- разрешаем двигаться человечку
+	- ожидаем нажания Enter (при ожидании мигаем "press a key"):
+		- убираем заставочные надписи
+		- включаем возможность двигаться и атаковать у всех вызывая EnableMonsters()
+		- запускаем игровой процесс
+		[State: Running]
+
+Особые случаи
+=============
+
+(State = WelcomeScreen)
+Начальная заставка всей игры:
+	- ожидаем нажания Enter (при ожидании мигаем "press a key" и разрешаем переключения между режимами игры):
+		- LevelFinished()
+		[State = NextLevelScreen]
+
+(State = Finished)
+Игра завершена:
+	- ожидаем нажания Enter
+		- перезапускаем всю игру вызывая StartLevel(0)
+
+
+Игровой процесс
+===============
+
+(State = Running)
+- определяем столкновения бомб с человечком и его пулями в DetectBombCollistions()
+- определяем столкновения пулей человечка с врагами и препятствиями в DetectBulletCollisions()
+

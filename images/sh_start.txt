@@ -1,0 +1,43 @@
+interface Port-channel1
+ description CH1.KLGC3750XSW01
+ switchport mode trunk
+ switchport nonegotiate
+ storm-control broadcast level 4.00
+ storm-control multicast level 4.00
+!
+interface FastEthernet0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet1/0/1
+ description FMS (Dispatcher PC)
+ switchport access vlan 580
+ switchport mode access
+ switchport block multicast
+ srr-queue bandwidth shape  0 0 0 0
+ priority-queue out
+ no cdp enable
+ spanning-tree portfast edge
+!
+interface GigabitEthernet1/0/2
+ description Facility Monitoring System
+ switchport access vlan 580
+ switchport mode access
+ switchport block multicast
+ srr-queue bandwidth shape  0 0 0 0
+ priority-queue out
+ no cdp enable
+ spanning-tree portfast edge
+!
+interface GigabitEthernet1/0/3
+ description BMS (Operator PC)
+ switchport access vlan 581
+ switchport mode access
+ switchport block multicast
+ srr-queue bandwidth shape  0 0 0 0
+ priority-queue out
+ no cdp enable
+ spanning-tree portfast edge
+!
+
+

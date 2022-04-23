@@ -1,0 +1,40 @@
+Extended IP access list VLAN590_WIFI_DEV_IN
+    10 permit ip host 10.76.59.5 10.100.0.0 0.0.255.255
+    20 permit tcp 10.76.59.0 0.0.0.255 host 10.76.52.23 eq www
+    30 permit tcp 10.76.59.0 0.0.0.255 host 10.76.52.23 eq 443
+    40 permit udp 10.76.59.0 0.0.0.255 host 10.76.52.16 eq domain
+    50 permit udp 10.76.59.0 0.0.0.255 host 10.76.52.17 eq domain
+    60 permit udp any eq bootpc any eq bootps
+    70 deny ip any any log
+Extended IP access list VLAN590_WIFI_DEV_OUT
+    10 permit ip 10.100.0.0 0.0.255.255 host 10.76.59.5
+    20 permit tcp host 10.76.52.23 10.76.59.0 0.0.0.255 gt 1023 established
+    30 permit udp host 10.76.52.16 eq domain 10.76.59.0 0.0.0.255
+    40 permit udp host 10.76.52.17 eq domain 10.76.59.0 0.0.0.255
+    50 permit udp host 10.76.52.16 eq bootpc 10.76.59.0 0.0.0.255 eq bootps
+    60 permit udp host 10.76.52.17 eq bootpc 10.76.59.0 0.0.0.255 eq bootps
+    70 deny ip any any log
+Extended IP access list VLAN_BMS_IN
+    10 permit ip 10.76.58.32 0.0.0.31 host 10.76.54.3
+    20 permit ip 10.76.58.32 0.0.0.31 host 10.76.54.2
+    30 permit ip 10.76.58.32 0.0.0.31 host 10.64.100.11
+    40 permit ip 10.76.58.32 0.0.0.31 host 10.64.100.14
+    50 permit ip 10.76.58.32 0.0.0.31 host 10.64.100.26
+    60 permit ip 10.76.58.32 0.0.0.31 host 10.76.54.79
+    70 permit ip 10.76.58.32 0.0.0.31 host 10.76.54.81
+    80 permit ip 10.76.58.32 0.0.0.31 host 10.76.54.33
+    90 permit ip 10.76.58.32 0.0.0.31 host 10.76.54.41
+    100 permit ip 10.76.58.32 0.0.0.31 host 10.76.54.12
+    110 permit ip 10.76.58.32 0.0.0.31 host 10.76.54.125
+    120 permit ip 10.76.58.32 0.0.0.31 host 10.76.54.68
+    130 permit ip 10.76.58.32 0.0.0.31 host 10.76.54.89
+    140 permit ip host 10.76.58.34 10.76.49.0 0.0.0.31
+    150 permit tcp host 10.76.58.40 10.76.56.128 0.0.0.63 eq 102
+    160 permit tcp host 10.76.58.40 10.76.57.0 0.0.0.15 eq 102
+    170 permit tcp host 10.76.58.40 10.76.57.32 0.0.0.15 eq 102
+    180 permit tcp host 10.76.58.40 10.76.57.48 0.0.0.15 eq 102
+    190 permit tcp host 10.76.58.40 10.76.57.64 0.0.0.15 eq 102
+    200 permit tcp host 10.76.58.40 10.76.57.80 0.0.0.15 eq 102
+    210 deny ip any any log (10696872 matches)
+    220 deny icmp any any log
+    230 deny igmp any any log

@@ -1,0 +1,31 @@
+Port      Name               Status       Vlan       Duplex  Speed Type
+Gi1/0/1   FMS (Dispatcher PC notconnect   580          auto   auto 10/100/1000BaseTX
+Gi1/0/2   Facility Monitorin notconnect   580          auto   auto 10/100/1000BaseTX
+Gi1/0/3   BMS (Operator PC)  notconnect   581          auto   auto 10/100/1000BaseTX
+Gi1/0/4   BMS (PXC22-E.D)    connected    581        a-full  a-100 10/100/1000BaseTX
+Gi1/0/5   Access (ACC2)      connected    582        a-full  a-100 10/100/1000BaseTX
+Gi1/0/6   Access (Operator P notconnect   582          auto   auto 10/100/1000BaseTX
+Gi1/0/7   Video CAM #3       connected    583        a-full a-1000 10/100/1000BaseTX
+Gi1/0/8   Video Server #1    connected    583        a-full a-1000 10/100/1000BaseTX
+Gi1/0/9   Video CAM #2       connected    583        a-full a-1000 10/100/1000BaseTX
+Gi1/0/10  NOTUSED.SHUTDOWN   disabled     540          auto   auto 10/100/1000BaseTX
+Gi1/0/11  NOTUSED.SHUTDOWN   disabled     1            auto   auto 10/100/1000BaseTX
+Gi1/0/12  External Guests    notconnect   482          auto   auto 10/100/1000BaseTX
+Gi1/0/13  DHCP-Client        notconnect   540          auto   auto 10/100/1000BaseTX
+Gi1/0/14  DHCP-Client        notconnect   540          auto   auto 10/100/1000BaseTX
+Gi1/0/15  DHCP-Client        notconnect   540          auto   auto 10/100/1000BaseTX
+Gi1/0/16  DHCP-Client        notconnect   540          auto   auto 10/100/1000BaseTX
+Gi1/0/17  DHCP-Client        notconnect   540          auto   auto 10/100/1000BaseTX
+Gi1/0/18  DHCP-Client        notconnect   540          auto   auto 10/100/1000BaseTX
+Gi1/0/19  DHCP-Client        notconnect   540          auto   auto 10/100/1000BaseTX
+Gi1/0/20  DHCP-Client        notconnect   540          auto   auto 10/100/1000BaseTX
+Gi1/0/21  DHCP-Client        connected    540        a-full a-1000 10/100/1000BaseTX
+Gi1/0/22  DHCP-Client        connected    540        a-full a-1000 10/100/1000BaseTX
+Gi1/0/23  Printer            notconnect   521          auto   auto 10/100/1000BaseTX
+Gi1/0/24  Printer            notconnect   521          auto   auto 10/100/1000BaseTX
+Gi1/0/25  NOTUSED.SHUTDOWN   disabled     1            auto   auto Not Present
+Gi1/0/26  NOTUSED.SHUTDOWN   disabled     1            auto   auto Not Present
+Gi1/0/27  CH1.MEMBER.KLGC375 connected    trunk      a-full a-1000 1000BaseSX SFP
+Gi1/0/28  CH1.MEMBER.KLGC375 connected    trunk      a-full a-1000 1000BaseSX SFP
+Po1       CH1.KLGC3750XSW01  connected    trunk      a-full a-1000
+Fa0                          disabled     routed       auto   auto 10/100BaseTX
