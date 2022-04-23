@@ -1,5 +1,5 @@
 # Old-Monitor
-Old black and white monitur sumulator with embedded old style game
+Old black and white monitor sumulator with embedded old style game
 
 ![Sample of interface1](https://github.com/ezik117/Old-Monitor/blob/main/001.png)
 ![Sample of interface2](https://github.com/ezik117/Old-Monitor/blob/main/002.png)
