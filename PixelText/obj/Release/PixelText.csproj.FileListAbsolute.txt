@@ -26,3 +26,4 @@ C:\SYSTEM\_PROJECTS\CPP\040. PixelText\PixelText\obj\Release\PixelText.csproj.Ge
 C:\SYSTEM\_PROJECTS\CPP\040. PixelText\PixelText\obj\Release\PixelText.csproj.CoreCompileInputs.cache
 C:\SYSTEM\_PROJECTS\CPP\040. PixelText\PixelText\obj\Release\PixelText.exe
 C:\SYSTEM\_PROJECTS\CPP\040. PixelText\PixelText\obj\Release\PixelText.pdb
+D:\PROJECTS\CPP\040. PixelText\PixelText\obj\Release\PixelText.csprojAssemblyReference.cache
