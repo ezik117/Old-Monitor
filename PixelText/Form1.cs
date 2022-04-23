@@ -19,7 +19,6 @@ namespace PixelText
         Bitmap knob_orig;
         bool gameMode = false;
 
-        Game game;
         Game2 game2;
 
         public Form1()
@@ -87,34 +86,28 @@ namespace PixelText
 
             if (e.Delta < 0)
             {
-                //if (c.G + delta*2 <= 70)
+                rotate += 5;
+                if (rotate > 360) rotate = 5;
+                knobBright.Image = RotateImage(knob_orig, rotate);
+                if (crt.BColor.R < 128 && crt.BColor.G < 128 && crt.BColor.B < 128)
                 {
-                    rotate += 5;
-                    if (rotate > 360) rotate = 5;
-                    knobBright.Image = RotateImage(knob_orig, rotate);
-                    if (crt.BColor.R < 128 && crt.BColor.G < 128 && crt.BColor.B < 128)
-                    {
-                        if (crt.displayType == CrtTerminal.DisplayType.Green6105)
-                            crt.BColor = Color.FromArgb(c.R + delta, c.G + delta*2, c.B + delta);
-                        else
-                            crt.BColor = Color.FromArgb(c.R + delta, c.G + delta, c.B + delta);
-                    }
+                    if (crt.displayType == CrtTerminal.DisplayType.Green6105)
+                        crt.BColor = Color.FromArgb(c.R + delta, c.G + delta*2, c.B + delta);
+                    else
+                        crt.BColor = Color.FromArgb(c.R + delta, c.G + delta, c.B + delta);
                 }
             }
             else
             {
-                //if (c.R - delta >= 0)
+                rotate -= 5;
+                if (rotate < 0) rotate = -5;
+                knobBright.Image = RotateImage(knob_orig, rotate);
+                if (crt.BColor.R > 0 && crt.BColor.G > 0 && crt.BColor.B > 0)
                 {
-                    rotate -= 5;
-                    if (rotate < 0) rotate = -5;
-                    knobBright.Image = RotateImage(knob_orig, rotate);
-                    if (crt.BColor.R > 0 && crt.BColor.G > 0 && crt.BColor.B > 0)
-                    {
-                        if (crt.displayType == CrtTerminal.DisplayType.Green6105)
-                            crt.BColor = Color.FromArgb(c.R - delta, c.G - delta*2, c.B - delta);
-                        else
-                            crt.BColor = Color.FromArgb(c.R - delta, c.G - delta, c.B - delta);
-                    }
+                    if (crt.displayType == CrtTerminal.DisplayType.Green6105)
+                        crt.BColor = Color.FromArgb(c.R - delta, c.G - delta*2, c.B - delta);
+                    else
+                        crt.BColor = Color.FromArgb(c.R - delta, c.G - delta, c.B - delta);
                 }
             }
 
@@ -270,8 +263,6 @@ namespace PixelText
             crt.ShowCursor = false;
 
             gameMode = true;
-            //game = new Game(crt);
-            //game.Start();
 
             game2 = new Game2(crt, this);
             game2.Start();

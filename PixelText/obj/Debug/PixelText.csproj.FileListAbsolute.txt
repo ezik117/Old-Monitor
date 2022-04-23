@@ -25,4 +25,3 @@ C:\SYSTEM\_PROJECTS\CPP\040. PixelText\PixelText\obj\Debug\PixelText.pdb
 C:\SYSTEM\_PROJECTS\CPP\040. PixelText\PixelText\bin\Debug\PixelText.exe.config
 C:\SYSTEM\_PROJECTS\CPP\040. PixelText\PixelText\bin\Debug\PixelText.exe
 C:\SYSTEM\_PROJECTS\CPP\040. PixelText\PixelText\bin\Debug\PixelText.pdb
-D:\PROJECTS\CPP\040. PixelText\PixelText\obj\Debug\PixelText.csprojAssemblyReference.cache

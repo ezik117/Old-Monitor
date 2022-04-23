@@ -1875,7 +1875,7 @@ namespace PixelText
                     crt.PrintAt(12, 40, $"CATCH ME IF YOU CAN", Color.Yellow);
                     EnemiesCount = (GameDifficulty == 0 ? 1 : 3);
 
-                    bombs = new Bomb[10]; // 20, 30 хорошее количество для уровней
+                    bombs = new Bomb[15]; // 20, 30 хорошее количество для уровней
                     for (int i = 0; i < bombs.Length; i++) bombs[i] = new Bomb(this, 1, 1);
 
                     barriers = new Barrier[5];
@@ -1889,6 +1889,7 @@ namespace PixelText
                     barriers[1] = new Barrier(this, 31, 1, speed: 1, row: 15, Action.MoveLeft);
                     barriers[2] = new Barrier(this, 31, 1, speed: 1, row: 3, Action.MoveRight);
                     barriers[3] = new Barrier(this, 31, 1, speed: 1, row: 4, Action.MoveLeft);
+                    barriers[4] = new Barrier(this, 13, 1, speed: 0, row: 9, Action.MoveRight);
                     break;
 
                 case 7:
